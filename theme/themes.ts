@@ -10,4 +10,9 @@ const dark: AppTheme = {
 	background: '#000000',
 };
 
+const test: AppTheme = {
+	name: 'test',
+	background: '#333',
+};
+
 export const Themes: Record<string, AppTheme> = { dark, light };
