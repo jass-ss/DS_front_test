@@ -1,7 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
 import Header from './Header';
-import { StyledLayout, Inner } from './Layout_style';
+import Link from 'next/link';
+import { StyledLayout, Inner, StyledNav } from './Layout_style';
 import Footer from './Footer';
 import Categoty from './Categoty';
 

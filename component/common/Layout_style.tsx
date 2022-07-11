@@ -13,3 +13,13 @@ export const Inner = styled.div`
 	transform: translateX(-50%);
 	border: 2px solid plum;
 `;
+
+export const StyledNav = styled.div`
+	border: 2px solid plum;
+	& {
+		Link {
+			width: 100px;
+			height: 100px;
+		}
+	}
+`;
