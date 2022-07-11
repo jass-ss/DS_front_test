@@ -21,7 +21,9 @@ function Layout({ children }: childType) {
 			<Header />
 			<main>
 				<Categoty />
-				<Inner />
+				<Inner>
+					<p>1280px</p>
+				</Inner>
 				{children}
 			</main>
 			<Footer />
