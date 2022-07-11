@@ -23,8 +23,8 @@ function Layout({ children }: childType) {
 				<Categoty />
 				<Inner>
 					<p>1280px</p>
+					{children}
 				</Inner>
-				{children}
 			</main>
 			<Footer />
 		</StyledLayout>

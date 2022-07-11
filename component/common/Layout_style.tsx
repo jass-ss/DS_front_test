@@ -8,9 +8,7 @@ export const StyledLayout = styled.div`
 export const Inner = styled.div`
 	width: 1280px;
 	height: 100vh;
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
+	margin: 0 auto;
 	border: 2px solid plum;
 	p {
 		position: absolute;
