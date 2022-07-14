@@ -16,7 +16,7 @@ function Main(/*{data}*/) {
 						<h1>로그인 부탁</h1>
 						<div>
 							<button>예</button>
-							<button className='test'>아니오</button>
+							<button>아니오</button>
 						</div>
 					</Modal>
 				)}
