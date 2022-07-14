@@ -1,18 +1,25 @@
-import React from 'react';
-import Link from 'next/link';
-import { StyledSection, StyledNav } from './Main_style';
+import React, { Children, useState } from 'react';
+import { StyledSection } from './Main_style';
+import Modal from '../common/Modal';
 
 function Main(/*{data}*/) {
 	/* const [posts, setPosts] = useState(data);
 	 */
+	const [open, setOpen] = useState(false);
 	return (
 		<>
-			<StyledNav>
-				<Link href='#test'>
-					<a>본문 바로가기</a>
-				</Link>
-			</StyledNav>
 			<StyledSection>
+				<button onClick={() => setOpen(true)}>x</button>
+				{open && (
+					<Modal>
+						<button onClick={() => setOpen(false)}>x</button>
+						<h1>로그인 부탁</h1>
+						<div>
+							<button>예</button>
+							<button className='test'>아니오</button>
+						</div>
+					</Modal>
+				)}
 				{/*posts.map((m,idx)=>{
     return (<><>)
   }) */}

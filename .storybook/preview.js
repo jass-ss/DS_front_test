@@ -1,51 +1,55 @@
 import * as NextImage from 'next/image';
 import { ThemeProvider, Global } from '@emotion/react';
-import { Themes } from '../theme/themes'
+import { Themes } from '../theme/themes';
 import { GlobalStyles } from '../styles/global';
+import { muiTheme } from 'storybook-addon-material-ui';
 
 const OriginalNextImage = NextImage.default;
 
 // storybook Image Next.js 설정.
-Object.defineProperty(NextImage, "default", {
-  configurable: true,
-  value: (props) => <OriginalNextImage {...props} unoptimized />,
-})
+Object.defineProperty(NextImage, 'default', {
+	configurable: true,
+	value: (props) => <OriginalNextImage {...props} unoptimized />,
+});
 
 const withThemeProvider = (Story, context) => {
-  const background = context.globals.backgrounds?.value || parameters.backgrounds.defaultColor; 
-  const theme = Object.values(Themes).find(theme => theme.background === background) 
+	const background =
+		context.globals.backgrounds?.value || parameters.backgrounds.defaultColor;
+	const theme = Object.values(Themes).find(
+		(theme) => theme.background === background
+	);
 
-  return (
-    <ThemeProvider theme={theme}>
-      <Story {...context} />
-    </ThemeProvider>
-  )
+	return (
+		<ThemeProvider theme={theme}>
+			<Story {...context} />
+		</ThemeProvider>
+	);
 };
 
 const withGlobalStyles = (Story, context) => (
-  <>
-    <Global styles={GlobalStyles} />
-    <Story {...context} />
-  </>
-)
+	<>
+		<Global styles={GlobalStyles} />
+		<Story {...context} />
+	</>
+);
 
-export const decorators = [withThemeProvider, withGlobalStyles];
+export const decorators = [withThemeProvider, withGlobalStyles, muiTheme()];
 
 export const parameters = {
-  backgrounds: {
-    default: 'light', 
-    defaultColor: '#ffffff',
-    values: [
-      { name: 'light', value: '#ffffff' },
-      { name: 'dark', value: '#000000' },
-    ],
-  },
+	backgrounds: {
+		default: 'light',
+		defaultColor: '#ffffff',
+		values: [
+			{ name: 'light', value: '#ffffff' },
+			{ name: 'dark', value: '#000000' },
+		],
+	},
 
-  actions: { argTypesRegex: "^on[A-Z].*" },
-  controls: {
-    matchers: {
-      color: /(background|color)$/i,
-      date: /Date$/,
-    },
-  },
-}
+	actions: { argTypesRegex: '^on[A-Z].*' },
+	controls: {
+		matchers: {
+			color: /(background|color)$/i,
+			date: /Date$/,
+		},
+	},
+};
