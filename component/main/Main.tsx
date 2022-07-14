@@ -1,4 +1,4 @@
-import React, { Children, useState } from 'react';
+import React, { useState } from 'react';
 import { StyledSection } from './Main_style';
 import Modal from '../common/Modal';
 
