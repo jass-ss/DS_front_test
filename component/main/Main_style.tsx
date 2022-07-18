@@ -11,3 +11,10 @@ export const StyledSection = styled.section`
 export const Button1 = styled.button`
 	position: absolute;
 `;
+
+export const TextBar = styled.div`
+	display: flex;
+	border: 1px solid;
+	width: 100%;
+	height: 2rem;
+`;

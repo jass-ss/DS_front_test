@@ -7,13 +7,14 @@ function Categoty() {
 		<Nav>
 			<ul>
 				<li>
-					<Link href='#'>인기 포스팅</Link>
+					<Link href='/develop'>
+						<a>개발자</a>
+					</Link>
 				</li>
 				<li>
-					<Link href='#'>개발자</Link>
-				</li>
-				<li>
-					<Link href='#'>디자이너</Link>
+					<Link href='/designer'>
+						<a>디자이너</a>
+					</Link>
 				</li>
 				<li>
 					<Link href='#'>기획자</Link>

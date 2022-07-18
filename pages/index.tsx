@@ -7,7 +7,6 @@ const Home: NextPage = () => {
 		<>
 			<Layout>
 				<Main />
-				<div></div>
 			</Layout>
 		</>
 	);
