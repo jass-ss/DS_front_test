@@ -77,7 +77,7 @@ function Tiptap_submit({ getValue, setOpen }: Props) {
 				await Promise.all(setAttr)
 					.then((res) => {
 						content = targetEle.querySelector('.ProseMirror')?.innerHTML;
-						preText = targetEle.querySelector('.ProseMirror')?.innerText;
+						//preText = targetEle.querySelector('.ProseMirror')?.innerText;
 						console.log(preText);
 						imgSrc.push(imgsArr[0].src);
 					})
@@ -99,7 +99,7 @@ function Tiptap_submit({ getValue, setOpen }: Props) {
 			} else {
 				content = target.querySelector('.ProseMirror')?.innerHTML;
 				//??꼭 필요할까? content만 저장하고 post읽을때 content에서 inneertext 처리하면 pretext는 저장 안해도 될거같은데?
-				preText = target.querySelector('.ProseMirror')?.innerText;
+				//preText = target.querySelector('.ProseMirror')?.innerText;
 				console.log(preText);
 
 				const post = {
