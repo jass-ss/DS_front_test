@@ -308,24 +308,24 @@ export const StyledModalSignUp = styled.div`
 			&.pass {
 				p,
 				svg {
-					color: green;
+					color: #88E25D;
 				}
 				input {
-					border-color: green;
+					border-color: #88E25D;
 					&:focus {
-						outline: 1px solid green;
+						outline: 1px solid #88E25D;
 					}
 				}
 			}
 			&.nopass {
 				p,
 				svg {
-					color: orange;
+					color: #FF5C00;
 				}
 				input {
-					border-color: orange;
+					border-color: #FF5C00;
 					&:focus {
-						outline: 1px solid orange;
+						outline: 1px solid #FF5C00;
 					}
 				}
 			}
@@ -335,24 +335,24 @@ export const StyledModalSignUp = styled.div`
 			&.pass {
 				p,
 				svg {
-					color: green;
+					color: #88E25D;
 				}
 				textarea {
-					border-color: green;
+					border-color: #88E25D;
 					&:focus {
-						outline: 1px solid green;
+						outline: 1px solid #88E25D;
 					}
 				}
 			}
 			&.nopass {
 				p,
 				svg {
-					color: orange;
+					color: #FF5C00;
 				}
 				textarea {
-					border-color: orange;
+					border-color: #FF5C00;
 					&:focus {
-						outline: 1px solid orange;
+						outline: 1px solid #FF5C00;
 					}
 				}
 			}

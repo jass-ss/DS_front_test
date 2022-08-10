@@ -30,7 +30,7 @@ const Tiptap = ({ setOpen }: Props) => {
 
 	const inputSizing = () => {
 		const num = title.current?.value.length;
-		num ? setInputSize(num * 2) : null;
+		num ? setInputSize(num * 1.5) : null;
 	};
 
 	const makeTag = (e: KeyboardEvent<HTMLInputElement>) => {
