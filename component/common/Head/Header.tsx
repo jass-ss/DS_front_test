@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { StyledHeader, HeaderBox } from '../Head/Header_style';
 import { ContextDispatch, ContextUser } from '../../../pages/_app';
-import { ModalSignIn } from '../none/Modal/ModalSignIn';
+import { ModalSignIn } from '../Modal/ModalSignIn';
 
 function Header() {
 	const { token } = useContext(ContextUser);
