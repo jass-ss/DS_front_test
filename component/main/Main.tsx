@@ -2,13 +2,13 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import { StyledArticle, StyledSection, TextBar } from './Main_style';
 import EditIcon from '@mui/icons-material/Edit';
 import { fData } from '../../firebase';
-import { ModalPost } from '../common/none/Modal/ModalPost';
+import { ModalPost } from '../common/Modal/ModalPost';
 import parse from 'react-html-parser';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import dayjs from 'dayjs';
 import { ContextUser } from '../../pages/_app';
-import { ModalSignUp } from '../common/none/Modal/ModalSignUp';
+import { ModalSignUp } from '../common/Modal/ModalSignUp';
 
 const Main = (/*{ data }: any*/) => {
 	const [open, setOpen] = useState(false);
