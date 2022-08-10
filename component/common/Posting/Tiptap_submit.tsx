@@ -113,7 +113,6 @@ function Tiptap_submit({ getValue, setOpen }: Props) {
 					commented: [],
 				};
 				//mutation.mutate(post);
-				console.log(post);
 			}
 			//나중에 지울 코드. 테스트용
 			setTimeout(() => setLoading(false), 2500);
