@@ -1,6 +1,6 @@
 import React, { KeyboardEvent, useEffect, useRef, useState } from 'react';
 import { Cancel } from '@mui/icons-material';
-import { WrapEditor } from '../none/Modal/Modal_style';
+import { WrapEditor } from '../Modal/Modal_style';
 import Tiptap_menu from './Tiptap_menu';
 import Tiptap_submit from './Tiptap_submit';
 import Tiptap_post from './Tiptap_post';
