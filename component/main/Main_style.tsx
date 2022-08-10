@@ -18,3 +18,21 @@ export const TextBar = styled.div`
 	width: 100%;
 	height: 2rem;
 `;
+
+export const StyledArticle = styled.article`
+	width: 90%;
+	max-height: 25rem;
+	margin: 3rem auto;
+	border: 1px solid black;
+	color: #444;
+
+	.prev {
+		p {
+			position: relative;
+			width: 800px;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			white-space: nowrap;
+		}
+	}
+`;

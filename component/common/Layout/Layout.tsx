@@ -1,10 +1,10 @@
 import React from 'react';
 import Head from 'next/head';
-import Header from './Header';
-import Link from 'next/link';
-import { StyledLayout, Inner, StyledNav } from './Layout_style';
-import Footer from './Footer';
-import Categoty from './Categoty';
+import Header from '../Head/Header';
+import { StyledLayout, Inner } from './Layout_style';
+import Footer from '../Footer/Footer';
+import Categoty from '../Category/Categoty';
+import Aside from '../Aside/Aside';
 
 type childType = {
 	children: React.ReactNode;
@@ -21,11 +21,10 @@ function Layout({ children }: childType) {
 			<Header />
 			<main>
 				<Categoty />
-				<Inner>
-					<p>1280px</p>
-					{children}
-				</Inner>
+				<Inner>{children}</Inner>
+				<Aside />
 			</main>
+			<></>
 			<Footer />
 		</StyledLayout>
 	);

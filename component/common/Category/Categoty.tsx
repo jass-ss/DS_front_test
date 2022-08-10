@@ -7,6 +7,11 @@ function Categoty() {
 		<Nav>
 			<ul>
 				<li>
+					<Link href='/'>
+						<a>(임시)메인으로</a>
+					</Link>
+				</li>
+				<li>
 					<Link href='/develop'>
 						<a>개발자</a>
 					</Link>

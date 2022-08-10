@@ -1,5 +1,4 @@
 {
-  "homepage": "https://jass-ss.github.io/DS_front_test",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -15,13 +14,21 @@
     "@emotion/styled": "^11.9.3",
     "@mui/icons-material": "^5.8.4",
     "@mui/material": "^5.9.0",
+    "@tanstack/react-query": "^4.0.10",
     "@tiptap/extension-image": "^2.0.0-beta.30",
+    "@tiptap/extension-underline": "^2.0.0-beta.25",
     "@tiptap/react": "^2.0.0-beta.114",
     "@tiptap/starter-kit": "^2.0.0-beta.191",
+    "@types/react-html-parser": "^2.0.2",
+    "axios": "^0.27.2",
+    "dayjs": "^1.11.4",
     "firebase": "^9.6.1",
     "next": "12.2.2",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-html-parser": "^2.0.2",
+    "react-query-devtools": "^2.6.3",
+    "uuidv4": "^6.2.13"
   },
   "devDependencies": {
     "@babel/core": "^7.18.6",
