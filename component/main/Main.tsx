@@ -19,7 +19,6 @@ const Main = (/*{ data }: any*/) => {
 	const ref = useRef<HTMLElement>(null);
 	const context = useContext(ContextUser);
 
-	/*
 	useEffect(() => {
 		if (context.user.job === '') {
 			setOpen(true);
@@ -32,7 +31,7 @@ const Main = (/*{ data }: any*/) => {
 			);
 		}
 	}, []);
-*/
+
 	/*
 	const { data, isLoading, isError } = useQuery(
 		['posts'],
