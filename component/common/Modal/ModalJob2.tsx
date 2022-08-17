@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useMutation } from '@tanstack/react-query';
 import axios from 'axios';
-import { StyledModalJob, StyledModalJob2, Wrap } from './Modal_style';
-import { ModalSignUp } from './ModalSignUp';
+import { StyledModalJob2, Wrap } from './Modal_style';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { ModalJob } from './ModalJob';
+import ModalSignUpImage from './ModalSignUpImage';
 
 type modalProps = {
 	setOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -82,8 +82,7 @@ export const ModalJob2 = ({
 
 	const mutation = useMutation(
 		async (data: object) => {
-			console.log(data);
-			console.log(`${token}`);
+			console.log('전송된 data', data);
 
 			await axios.post(`/post`, data, {
 				headers: {
@@ -92,8 +91,15 @@ export const ModalJob2 = ({
 			});
 		},
 		{
-			onSuccess: () => setOpen(false),
-			onError: (err) => console.log(err),
+			onSuccess: () => {
+				if (setModal) setModal(<ModalSignUpImage setOpen={setOpen} />);
+				console.log('성공');
+			},
+			onError: (err) => {
+				console.log(err);
+				//테스트용. 나중에 삭제할 코드
+				if (setModal) setModal(<ModalSignUpImage setOpen={setOpen} />);
+			},
 		}
 	);
 
@@ -106,6 +112,9 @@ export const ModalJob2 = ({
 	const select = (idx: number) => {
 		if (ref.current !== null) {
 			const buttons = ref.current.querySelectorAll('.job-button');
+
+			/*버튼 클릭시 ref.current에 속한 모든 버튼의 on 클래스네임 제거, 클릭한 버튼만 클래스네임 on 주기.=> 섹상 변경을 위해
+			-> useState로도 style 제어할 수 있지만, (동시에, 동일하게) 스타일 제어해야 할 버튼이 많아서 class로 css제어. (classNode사용)*/
 			buttons.forEach((b, idx) => {
 				b.classList.remove('job-on');
 			});
@@ -114,7 +123,6 @@ export const ModalJob2 = ({
 		}
 	};
 
-	//버튼 클릭시 ref.current에 속한 모든 버튼의 on 클래스네임 제거, 클릭한 버튼만 클래스네임 on 주기.=> 섹상 변경을 위해
 	return (
 		<Wrap ref={ref} tabIndex={0}>
 			<StyledModalJob2>
@@ -138,19 +146,7 @@ export const ModalJob2 = ({
 				<button
 					className='submit'
 					onClick={(e) => {
-						console.log(value);
-						if (value && e.currentTarget.classList.contains('on')) {
-							console.log({
-								name: `${value.name}`,
-								introduction: `${value.text}`,
-								jobId: job,
-							});
-							mutation.mutate({
-								name: `${value.name}`,
-								introduction: `${value.text}`,
-								jobId: job,
-							});
-						}
+						if (setModal) setModal(<ModalSignUpImage setOpen={setOpen} />);
 					}}>
 					가입완료
 				</button>

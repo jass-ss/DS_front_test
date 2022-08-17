@@ -170,7 +170,7 @@ export const ModalSignUp = ({ setOpen, setModal, token }: modalProps) => {
 								checkPass();
 							}}
 						/>
-						<div className='p-wrap'>
+						<div className='wrap-p'>
 							<p>{testMessage}</p>
 							<p>{word}/255</p>
 						</div>

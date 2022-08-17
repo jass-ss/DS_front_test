@@ -1,5 +1,6 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 import { Global } from '@emotion/react';
+import React from 'react';
 
 import { GlobalStyles } from '../styles/global';
 

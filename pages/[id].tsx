@@ -20,7 +20,7 @@ const Pages = () => {
 			//console.log('dispatch');
 			const userJob = router.query.job;
 			dispatch({ type: 'TOKEN', token: `${router.query.token}` });
-			dispatch({ type: 'JOB', job: userJob });
+			dispatch({ type: 'JOB', job: `${router.query.job}` });
 			//console.log(user);
 		}
 	}, [query]);
@@ -28,7 +28,7 @@ const Pages = () => {
 	switch (query) {
 		case '':
 			component = <Main />;
-
+			break;
 		case 'develop':
 			component = <Develop />;
 
@@ -47,6 +47,7 @@ const Pages = () => {
 
 			console.log('test:', user);
 			router.replace('');
+			break;
 
 		default:
 			console.log('디폴트');

@@ -1,4 +1,5 @@
 import type { NextPage, GetServerSideProps } from 'next';
+import React from 'react';
 import { useContext } from 'react';
 import Layout from '../component/common/Layout/Layout';
 import Main from '../component/main/Main';

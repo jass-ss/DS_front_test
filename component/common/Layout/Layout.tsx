@@ -21,10 +21,11 @@ function Layout({ children }: childType) {
 			<Header />
 			<main>
 				<Categoty />
-				<Inner>{children}</Inner>
-				<Aside />
+				<Inner>
+					{children}
+					<Aside />
+				</Inner>
 			</main>
-			<></>
 			<Footer />
 		</StyledLayout>
 	);

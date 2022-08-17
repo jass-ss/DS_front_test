@@ -1,3 +1,4 @@
+/*eslint no-mixed-spaces-and-tabs: ["error", "smart-tabs"]*/
 import React, { createContext, useReducer, Dispatch } from 'react';
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
@@ -6,17 +7,20 @@ import {
 	QueryClient,
 	QueryClientProvider,
 } from '@tanstack/react-query';
-import { userAgent } from 'next/server';
 
-type Action = {
-	type: string;
-	token?: string;
-	job?: object | string;
-};
+type Action =
+	| {
+			type: 'TOKEN';
+			token: string;
+	  }
+	| {
+			type: 'JOB';
+			job: null | string;
+	  };
 
 type State = {
 	token?: string;
-	user: object;
+	user: { id: ''; job: null | string };
 };
 
 export const ContextUser = React.createContext<State>({

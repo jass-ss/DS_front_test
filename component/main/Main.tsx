@@ -9,6 +9,7 @@ import axios from 'axios';
 import dayjs from 'dayjs';
 import { ContextUser } from '../../pages/_app';
 import { ModalSignUp } from '../common/Modal/ModalSignUp';
+import ModalTest from '../common/Modal/ModalTest';
 
 const Main = (/*{ data }: any*/) => {
 	const [open, setOpen] = useState(false);
@@ -99,6 +100,14 @@ const Main = (/*{ data }: any*/) => {
 						setModal(<ModalSignUp setOpen={setOpen} setModal={setModal} />);
 					}}>
 					프로필 설정 테스트
+				</button>
+
+				<button
+					onClick={() => {
+						setOpen(true);
+						setModal(<ModalTest setOpen={setOpen} />);
+					}}>
+					댓글 테스트
 				</button>
 
 				{open && modal}

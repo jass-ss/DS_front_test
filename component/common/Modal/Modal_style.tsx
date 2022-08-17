@@ -33,7 +33,10 @@ export const StyledModalSignIn = styled.div`
 	width: 320px;
 	height: 480px;
 	text-align: center;
-	background: linear-gradient(179.87deg, #191c46 16.31%, #ffdae1 146.31%);
+	background-image: url(./images/Background.svg),
+		linear-gradient(179.87deg, #191c46 16.31%, #ffdae1 146.31%);
+	background-repeat: no-repeat;
+	background-position: bottom;
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%, -50%);
@@ -359,7 +362,7 @@ export const StyledModalSignUp = styled.div`
 			textarea {
 				margin-top: 5px;
 			}
-			.p-wrap{
+			.wrap-p{
 				display:flex;
 				justify-content: space-between;
 				p{
@@ -562,3 +565,73 @@ export const StyledModalJob2 = styled.div`
 `;
 
 export const StyledModalAlert = styled.div``;
+
+export const StyledModalImage = styled.div`
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 288px;
+	height: 288px;
+	background: url(./images/Astronaut.svg) no-repeat center/cover;
+
+	p {
+		width: 100%;
+		font: 700 28px/1.5 'Pretendard';
+		margin-top: 300px;
+		text-align: center;
+		background: linear-gradient(89.97deg, #596acb -40.16%, #e9afb9 99.97%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+`;
+
+export const StyledModalTest = styled.div`
+	position: fixed;
+	width: 604px;
+	background: #fff;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 24px;
+
+	.wrap {
+		width: 100%;
+		max-height: 450px;
+		overflow-y: auto;
+
+		.test1 {
+			width: 100%;
+			min-height: 450px;
+		}
+		.comment-list {
+			width: 100%;
+			min-height: 300px;
+			padding-top: 5vmin;
+			.comment {
+				display: flex;
+				justify-content: center;
+				margin-bottom: 5vmin;
+
+				.profile-image {
+					min-width: 40px;
+					height: 40px;
+					border-radius: 50%;
+					background: gray;
+				}
+				.text {
+					width: 60%;
+					border-radius: 16px;
+					background: #dddd;
+					font: 400 14px/1.5 'Pretendard';
+				}
+			}
+		}
+	}
+
+	.close {
+		position: fixed;
+		top: 10px;
+		right: 30px;
+	}
+`;

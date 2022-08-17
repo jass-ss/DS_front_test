@@ -1,10 +1,7 @@
 import styled from '@emotion/styled';
 
 export const StyledAside = styled.aside`
-	position: fixed;
-	top: 0;
-	right: 0;
-	width: calc((100vw - 1280px) / 2);
+	width: 290px;
 	height: 100vh;
 	border: 1px solid green;
 `;
