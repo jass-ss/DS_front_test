@@ -9,7 +9,7 @@ import ModalSignUpImage from './ModalSignUpImage';
 type modalProps = {
 	setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 	setModal?: React.Dispatch<React.SetStateAction<React.ReactNode>>;
-	value?: { name: string; text: string | undefined };
+	value?: { [k: string]: any };
 	token?: string;
 	jobNumber: string | undefined;
 };
@@ -22,6 +22,8 @@ export const ModalJob2 = ({
 	jobNumber,
 }: modalProps) => {
 	//나중에 드롭다운으로 메뉴 더 생길수도.
+
+	console.log(value);
 
 	const [jobs, setJobs] = useState<string[]>([]);
 	const [job, setJob] = useState<string>();

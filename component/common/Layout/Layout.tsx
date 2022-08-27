@@ -22,8 +22,10 @@ function Layout({ children }: childType) {
 			<main>
 				<Categoty />
 				<Inner>
-					{children}
-					<Aside />
+					<div className='wrap'>
+						{children}
+						<Aside />
+					</div>
 				</Inner>
 			</main>
 			<Footer />

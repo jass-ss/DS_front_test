@@ -54,7 +54,7 @@ export const StyledModalSignIn = styled.div`
 		font: 400 14px/1.5 'Pretendard';
 		text-align: center;
 		color: #ffffff;
-		width: 80%;
+		width: 65%;
 		margin: 35px auto 80px;
 	}
 	button {

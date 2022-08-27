@@ -7,12 +7,12 @@ import ErrorIcon from '@mui/icons-material/Error';
 type modalProps = {
 	setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 	setModal: React.Dispatch<React.SetStateAction<React.ReactNode>>;
-	value?: { name: string; text: string | undefined };
 	token?: string;
 };
 
 export const ModalSignUp = ({ setOpen, setModal, token }: modalProps) => {
 	const ref = useRef<any>(null);
+	const value: any = {};
 
 	useEffect(() => {
 		setTimeout(() => ref.current.focus());
@@ -30,7 +30,7 @@ export const ModalSignUp = ({ setOpen, setModal, token }: modalProps) => {
 	const postProfile = (e: React.FormEvent) => {
 		e.preventDefault();
 		if (text.current?.value.trim() && name.current?.value) {
-			const value = {
+			value.profile = {
 				name: name?.current.value,
 				text: text?.current.value,
 			};

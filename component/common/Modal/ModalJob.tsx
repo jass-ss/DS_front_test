@@ -9,11 +9,12 @@ import ModalJob2 from './ModalJob2';
 type modalProps = {
 	setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 	setModal?: React.Dispatch<React.SetStateAction<React.ReactNode>>;
-	value?: { name: string; text: string | undefined };
+	value?: { [k: string]: any };
 	token?: string;
 };
 
 export const ModalJob = ({ setOpen, setModal, value, token }: modalProps) => {
+	console.log(value);
 	//나중에 드롭다운으로 메뉴 더 생길수도.
 	const jobs = ['개발자', '디자이너', '기획자', '마케터', '창업'];
 
@@ -91,7 +92,8 @@ export const ModalJob = ({ setOpen, setModal, value, token }: modalProps) => {
 						}
 					}}*/
 					onClick={(e) => {
-						if (setModal && e.currentTarget.classList.contains('on'))
+						if (setModal && value && e.currentTarget.classList.contains('on')) {
+							value.job = job;
 							setModal(
 								<ModalJob2
 									setOpen={setOpen}
@@ -100,6 +102,7 @@ export const ModalJob = ({ setOpen, setModal, value, token }: modalProps) => {
 									jobNumber={job}
 								/>
 							);
+						}
 					}}>
 					다음
 				</button>

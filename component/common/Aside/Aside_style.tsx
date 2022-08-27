@@ -1,9 +1,18 @@
 import styled from '@emotion/styled';
 
 export const StyledAside = styled.aside`
+	position: relative;
+	top: 20px;
+	right: 24px;
 	width: 290px;
-	height: 100vh;
 	border: 1px solid green;
+	.any {
+		border: 1px solid;
+		width: 100%;
+		height: 400px;
+		margin-top: calc(4rem - 20px);
+		background: #ffff;
+	}
 `;
 
 export const AsideBox = styled.div`
@@ -11,8 +20,11 @@ export const AsideBox = styled.div`
 	height: 13rem;
 	margin: 1rem auto;
 	border: 1px solid gray;
+	background: #ffff;
 `;
 
 export const AsideWrap = styled.div`
-	margin-top: 8rem;
+	margin-top: 20px;
+	position: sticky;
+	top: 20px;
 `;
