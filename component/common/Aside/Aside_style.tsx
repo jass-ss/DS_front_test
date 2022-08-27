@@ -9,7 +9,7 @@ export const StyledAside = styled.aside`
 	.any {
 		border: 1px solid;
 		width: 100%;
-		height: 400px;
+		height: 300px;
 		margin-top: calc(4rem - 20px);
 		background: #ffff;
 	}

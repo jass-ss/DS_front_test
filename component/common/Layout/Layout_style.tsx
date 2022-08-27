@@ -12,7 +12,7 @@ export const StyledLayout = styled.div`
 */
 export const Inner = styled.div`
 	width: 996px;
-	min-height: 100vh;
+	min-height: 150vh;
 	border: 2px solid plum;
 	margin-left: calc(((100% - (314px + 996px)) / 2) + 314px);
 	.wrap {
