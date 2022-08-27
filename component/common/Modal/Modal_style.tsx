@@ -614,6 +614,7 @@ export const StyledModalTest = styled.div`
 	border-radius: 24px;
 
 	.wrap {
+		display: block;
 		width: 100%;
 		max-height: 450px;
 		overflow-y: auto;

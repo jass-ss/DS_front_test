@@ -12,12 +12,19 @@ function ModalTest({ setOpen }: Props) {
 	const [commentOpen, setCommentOpen] = useState(false);
 	const arr = [1, 2, 3, 4, 5];
 
+	/*
 	useEffect(() => {
 		if (target.current) {
 			console.log(target.current);
 			target.current.scrollIntoView();
 		}
 	}, [commentOpen]); // 댓글컴포넌트가 생겨서 target.currnet가 null이 아니게 된 후 scrollIntoView() 이동을 해야하므로 useEffect()로 commentOpen을 감시.
+*/
+
+	const toView = () => {
+		setTimeout(() => target.current?.scrollIntoView(), 100);
+	};
+
 	return (
 		<Wrap>
 			<StyledModalTest>
@@ -26,7 +33,8 @@ function ModalTest({ setOpen }: Props) {
 						블라블라
 						<button
 							onClick={() => {
-								setCommentOpen(!commentOpen);
+								setCommentOpen(true);
+								toView();
 							}}>
 							댓글
 						</button>
@@ -47,7 +55,12 @@ function ModalTest({ setOpen }: Props) {
 						</div>
 					)}
 				</div>
-				<button className='close' onClick={() => setOpen(false)}>
+				<button
+					className='close'
+					onClick={() => {
+						setOpen(false);
+						setCommentOpen(false);
+					}}>
 					X
 				</button>
 			</StyledModalTest>
