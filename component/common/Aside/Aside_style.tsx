@@ -11,10 +11,10 @@ export const StyledAside = styled.aside`
 		width: 100%;
 		height: 300px;
 		margin-top: calc(4rem - 20px);
-		background-image: url('./images/'Astronaut.svg);
+		background-image: url(./images/Astronaut.svg);
 		background-repeat: no-repeat;
 		background-position: center;
-		background-size: cover;
+		background-size: 420px;
 	}
 `;
 

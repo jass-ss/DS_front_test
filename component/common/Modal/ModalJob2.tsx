@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useMutation } from '@tanstack/react-query';
 import axios from 'axios';
-import { StyledModalJob2, Wrap } from './Modal_style';
+import { StyledModalJob, Wrap } from './Modal_style';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { ModalJob } from './ModalJob';
 import ModalSignUpImage from './ModalSignUpImage';
@@ -121,13 +121,13 @@ export const ModalJob2 = ({
 				b.classList.remove('job-on');
 			});
 			buttons[idx].classList.add('job-on');
-			ref.current.querySelector('.submit')?.classList.add('on');
+			ref.current.querySelector('.next')?.classList.add('on');
 		}
 	};
 
 	return (
 		<Wrap ref={ref} tabIndex={0}>
-			<StyledModalJob2>
+			<StyledModalJob>
 				<h1>{jobNumber}</h1>
 
 				{jobs.map((j, idx) => {
@@ -146,18 +146,20 @@ export const ModalJob2 = ({
 				})}
 
 				<button
-					className='submit'
+					className='next'
 					onClick={(e) => {
 						if (setModal) setModal(<ModalSignUpImage setOpen={setOpen} />);
 					}}>
-					가입완료
+					다음
 				</button>
 
 				<button
 					className='prev'
 					onClick={() => {
 						if (setModal)
-							setModal(<ModalJob setOpen={setOpen} setModal={setModal} />);
+							setModal(
+								<ModalJob setOpen={setOpen} setModal={setModal} value={value} />
+							);
 					}}
 					arira-label='이전 단계로'>
 					<ArrowBackIcon />
@@ -169,7 +171,7 @@ export const ModalJob2 = ({
 					arira-label='닫기'>
 					X
 				</button>
-			</StyledModalJob2>
+			</StyledModalJob>
 		</Wrap>
 	);
 };

@@ -434,6 +434,7 @@ export const StyledModalJob = styled.div`
 		display: block;
 		position: relative;
 		margin: 8px auto;
+		padding: 0 16px;
 		color: #424242;
 		background: none;
 		width: 90%;
@@ -483,6 +484,9 @@ export const StyledModalJob = styled.div`
 		background: #212C6A;
 		border:none;
 		text-align:center;
+		&:hover{
+			background: #212C6A;
+		}
 		&.on{
 			opacity: 1;
 			&:hover{
@@ -492,83 +496,88 @@ export const StyledModalJob = styled.div`
 `;
 
 export const StyledModalJob2 = styled.div`
-	position: fixed;
-	width: 320px;
-	background: #fff;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
-	border-radius: 24px;
+position: fixed;
+width: 320px;
+background: #fff;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+border-radius: 24px;
 
-	h1 {
-		font: 700 20px/1.5 'Pretendard';
-		color: #424242;
-		margin-bottom: 1.5rem;
-		text-align: center;
+h1 {
+	font: 700 20px/1.5 'Pretendard';
+	color: #424242;
+	margin-bottom: 8px;
+	text-align: center;
+}
+
+p {
+	position: relative;
+	width:100%;
+	padding: 0 32px;
+	font: 400 14px/1.5 'Pretendard';
+	margin-bottom: 19px;
+}
+
+button {
+	display: block;
+	position: relative;
+	margin: 8px auto;
+	color: #424242;
+	background: none;
+	width: 90%;
+	height: 48px;
+	font: bold 16px/1.5 'Pretendard';
+	text-align:left;
+	border: 1px solid #DBDBDB;
+	border-radius: 8px;
+	cursor: pointer;
+	&:hover,
+	&.job-on {
+		background: #cdd3ef;
+		border:none;
 	}
-
-	p {
-		position: relative;
-	}
-
-	button {
-		display: block;
-		position: relative;
-		margin: 4px auto;
-		width: 90%;
-		height: 2rem;
-		font: bold 24px/1.2 'Pretendard';
-		color: #424242;
+}
+.close,
+.prev {
+	position: absolute;
+	top: 17px;
+	width: 24px;
+	height: 24px;
+	color: #5b5b5b;
+	font: 400 20px/1 'arial';
+	border:none;
+	cursor: pointer;
+	&:hover {
 		background: none;
-		border: 1px solid #dbdbdb;
-		border-radius: 8px;
-		cursor: pointer;
-		&:hover,
-		&.job-on {
-			background: #cdd3ef;
-		}
+		color: #808dd7;
 	}
-	.close,
-	.prev {
-		position: absolute;
-		top: 17px;
-		width: 24px;
-		height: 24px;
-		color: #5b5b5b;
-		font: 400 20px/1 'arial';
-		border: none;
-		cursor: pointer;
-		&:hover {
-			background: none;
-			color: #808dd7;
-		}
+}
+.close {
+	right: 16px;
+}
+.prev {
+	left: 0.5rem;
+	width: 32px;
+	svg {
+		font: 400 24px/1 'arial';
 	}
-	.close {
-		right: 16px;
-	}
-	.prev {
-		left: 0.5rem;
-		width: 32px;
-		svg {
-			font: 400 24px/1 'arial';
-		}
-	}
-	.submit {
-		position: relative;
-		margin: 0.5rem auto;
-		color: #fff;
-		opacity: 0.5;
-		font: 700 14px/21px 'Pretendard';
-		background: #3a4db7;	
+}
+.next {
+	position: relative;
+	margin: 16px auto;
+	color: #fff;
+	opacity: 0.5;
+	font: 700 14px/21px 'Pretendard';
+	background: #212C6A;
+	border:none;
+	text-align:center;
+	&.on{
+		opacity: 1;
 		&:hover{
-			background: #3a4db7;
+			background: #3A4DB7;
 		}
-		&.on{
-			opacity: 1;
-			&:hover{
-				background: #212C6A;
-			}
-	}
+}
 `;
 
 export const StyledModalAlert = styled.div``;
