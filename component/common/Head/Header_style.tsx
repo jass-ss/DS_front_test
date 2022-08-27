@@ -8,6 +8,7 @@ export const StyledHeader = styled.header`
 	background: #151c43;
 	border: 1px solid;
 	top: 0;
+	padding: 0 24px;
 	z-index: 2;
 	flex-wrap: nowrap;
 	justify-content: space-between;
