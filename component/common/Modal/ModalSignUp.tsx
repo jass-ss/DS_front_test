@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { ReactElement, useEffect, useRef, useState } from 'react';
 import { ModalJob } from './ModalJob';
 import { StyledModalSignUp, Wrap } from './Modal_style';
 import CheckIcon from '@mui/icons-material/Check';
@@ -22,7 +22,8 @@ export const ModalSignUp = ({ setOpen, setModal, token }: modalProps) => {
 	const text = useRef<HTMLTextAreaElement>(null);
 	const submit = useRef<HTMLInputElement>(null);
 
-	const [word, setWord] = useState(0);
+	const [nameLen, setNameLen] = useState(0);
+	const [textLen, setTextLen] = useState(0);
 	const [pass, setPass] = useState<string>();
 	const [nameMessage, setNameMessage] = useState('5글자 이하로 적어주세요');
 	const [testMessage, setTextMessage] = useState<string>('');
@@ -84,9 +85,12 @@ export const ModalSignUp = ({ setOpen, setModal, token }: modalProps) => {
 			setNameMessage('사용 가능한 이름입니다.');
 	};
 
-	const sizing = () => {
-		if (text.current) {
-			setWord(text.current.value.trim().length);
+	const sizing = (e: React.ChangeEvent) => {
+		if (text.current && e.target.localName === 'textarea') {
+			setTextLen(text.current.value.trim().length);
+		}
+		if (name.current && e.target.localName === 'input') {
+			setNameLen(name.current.value.length);
 		}
 	};
 
@@ -137,6 +141,7 @@ export const ModalSignUp = ({ setOpen, setModal, token }: modalProps) => {
 							type='text'
 							name='이름'
 							placeholder='이름을 입력해주세요'
+							maxLength={12}
 							ref={name}
 							onKeyDown={(e) => {
 								if (e.key === ' ') e.preventDefault();
@@ -144,16 +149,21 @@ export const ModalSignUp = ({ setOpen, setModal, token }: modalProps) => {
 							onChange={(e) => {
 								validName(e);
 								checkPass();
+								sizing(e);
 							}}
 							onFocus={(e) => (e.target.placeholder = '')}
 							onInput={(e) => {
-								if (e.currentTarget.value.length > 5)
-									e.currentTarget.value = e.currentTarget.value.slice(0, 5);
+								if (e.currentTarget.value.length > 12)
+									e.currentTarget.value = e.currentTarget.value.slice(0, 12);
 							}}
 						/>
 						{pass === 'ok' ? <CheckIcon /> : null}
 						{pass === 'no' ? <ErrorIcon /> : null}
-						<p>{nameMessage}</p>
+
+						<div className='wrap-p'>
+							<p>{nameMessage}</p>
+							<p>{nameLen}/12</p>
+						</div>
 					</div>
 
 					<div className='wrap-text'>
@@ -164,15 +174,15 @@ export const ModalSignUp = ({ setOpen, setModal, token }: modalProps) => {
 							ref={text}
 							maxLength={255}
 							onFocus={eraseMessage}
-							onChange={() => {
-								sizing();
+							onChange={(e) => {
+								sizing(e);
 								validText();
 								checkPass();
 							}}
 						/>
 						<div className='wrap-p'>
 							<p>{testMessage}</p>
-							<p>{word}/255</p>
+							<p>{textLen}/255</p>
 						</div>
 					</div>
 

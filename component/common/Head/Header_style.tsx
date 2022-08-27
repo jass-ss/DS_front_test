@@ -24,6 +24,9 @@ export const HeaderBox = styled.div`
 	margin-top: 8px;
 	border: 1px solid #fff;
 	.start {
+		position: absolute;
+		top: 0;
+		right: 0;
 		width: 104px;
 		height: 40px;
 		font: 700 14px/1.5 'Pretendard';

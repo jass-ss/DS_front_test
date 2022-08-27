@@ -288,6 +288,15 @@ export const StyledModalSignUp = styled.div`
 			resize: none;
 			padding: 10px;
 		}
+		.wrap-p{
+			display:flex;
+			justify-content: space-between;
+			p{
+			position: relative;
+			font: 400 12px/0 'Pretendard';
+			margin: 10px;
+			}
+		}
 		.wrap-name {
 			width: 100%;
 			position: relative;
@@ -362,20 +371,12 @@ export const StyledModalSignUp = styled.div`
 			textarea {
 				margin-top: 5px;
 			}
-			.wrap-p{
-				display:flex;
-				justify-content: space-between;
-				p{
-				position: relative;
-				font: 400 12px/0 'Pretendard';
-				margin: 10px;
-				}
-			}
+			
 		}
 
 		input[type='submit'] {
 			color: #fff;
-			background: #3A4DB7;
+			background: #212c6a;
 			margin: 0.5rem auto;
 			border: none;
 			opacity: 0.5;
@@ -383,7 +384,7 @@ export const StyledModalSignUp = styled.div`
 			&.on{
 				opacity: 1;
 				&:hover{
-					background: #212c6a;
+					background: #3A4DB7;
 				}
 			}
 		}
@@ -417,29 +418,35 @@ export const StyledModalJob = styled.div`
 	h1 {
 		font: 700 20px/1.5 'Pretendard';
 		color: #424242;
-		margin-bottom: 1.5rem;
+		margin-bottom: 8px;
 		text-align: center;
 	}
 
 	p {
 		position: relative;
+		width:100%;
+		padding: 0 32px;
+		font: 400 14px/1.5 'Pretendard';
+		margin-bottom: 19px;
 	}
 
 	button {
 		display: block;
 		position: relative;
-		margin: 0 auto;
+		margin: 8px auto;
 		color: #424242;
 		background: none;
 		width: 90%;
-		height: 2rem;
-		font: bold 24px/1.2 'Pretendard';
-		border: none;
+		height: 48px;
+		font: bold 16px/1.5 'Pretendard';
+		text-align:left;
+		border: 1px solid #DBDBDB;
 		border-radius: 8px;
 		cursor: pointer;
 		&:hover,
 		&.job-on {
 			background: #cdd3ef;
+			border:none;
 		}
 	}
 	.close,
@@ -450,6 +457,7 @@ export const StyledModalJob = styled.div`
 		height: 24px;
 		color: #5b5b5b;
 		font: 400 20px/1 'arial';
+		border:none;
 		cursor: pointer;
 		&:hover {
 			background: none;
@@ -468,18 +476,17 @@ export const StyledModalJob = styled.div`
 	}
 	.next {
 		position: relative;
-		margin: 0.5rem auto;
+		margin: 16px auto;
 		color: #fff;
 		opacity: 0.5;
 		font: 700 14px/21px 'Pretendard';
-		background: #3a4db7;
-		&:hover{
-			background: #3a4db7;
-		}
+		background: #212C6A;
+		border:none;
+		text-align:center;
 		&.on{
 			opacity: 1;
 			&:hover{
-				background: #212C6A;
+				background: #3A4DB7;
 			}
 	}
 `;
@@ -574,6 +581,8 @@ export const StyledModalImage = styled.div`
 	width: 288px;
 	height: 288px;
 	background: url(./images/Astronaut.svg) no-repeat center/cover;
+	opacity: 1;
+	transition: 1s;
 
 	p {
 		width: 100%;

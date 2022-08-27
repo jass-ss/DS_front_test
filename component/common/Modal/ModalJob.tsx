@@ -59,6 +59,7 @@ export const ModalJob = ({ setOpen, setModal, value, token }: modalProps) => {
 		<Wrap ref={ref} tabIndex={0}>
 			<StyledModalJob>
 				<h1>직군 선택</h1>
+				<p>같은 직군의 사람들과 정보를 공유할 수 있어요.</p>
 
 				{jobs.map((j, idx) => {
 					return (
